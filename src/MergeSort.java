@@ -23,28 +23,28 @@ public class MergeSort {
 
     private static void conquer(int[] arr, int si, int mid, int ei) {
 
-        int[] fin=new int[ei-si];
+        int[] merged=new int[ei-si];
 
         int idx1=si; int idx2=mid; int k=0;
 
         while(idx1<mid && idx2<ei){
             if(arr[idx1]<arr[idx2]){
-                fin[k++]=arr[idx1++];
+                merged[k++]=arr[idx1++];
             }else{
-                fin[k++]=arr[idx2++];
+                merged[k++]=arr[idx2++];
             }
         }
 
         while(idx1<mid){
-            fin[k++]=arr[idx1++];
+            merged[k++]=arr[idx1++];
         }
         while(idx2<ei){
-            fin[k++]=arr[idx2++];
+            merged[k++]=arr[idx2++];
         }
 
         //copying the sorted array in main given array
-        for(int i=0; i< fin.length; i++){
-            arr[si+i]=fin[i];
+        for(int i=0; i< merged.length; i++){
+            arr[si+i]=merged[i];                    //bcos modifying the original array objects
         }
     }
 }

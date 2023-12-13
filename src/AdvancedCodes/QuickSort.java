@@ -4,13 +4,13 @@ import java.util.Arrays;
 
 public class QuickSort {
     public static void main(String[] args) {
-        int[] arr={5,4,8,3,1,6};
-        sort(arr,0,arr.length-1);
+        int[] arr={5,4,8,3,1,6,-87,6};
+        qSort(arr,0,arr.length-1);
         System.out.println(Arrays.toString(arr));
 
     }
 
-    static void sort(int[] arr,int low,int hi){
+    static void qSort(int[] arr, int low, int hi){
         if(low>=hi){
             return;
         }
@@ -41,8 +41,8 @@ public class QuickSort {
 
         }
 
-        sort(arr,low,end);
-        sort(arr,s,hi);
+        qSort(arr,low,end);
+        qSort(arr,s,hi);
     }
 
 }
