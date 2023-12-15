@@ -1,6 +1,6 @@
 public class SQRTBinarySearch {
     public static void main(String[] args) {
-        int n=40;
+        int n=5;
         int pre=3;  //precision
 
         System.out.printf("%.3f",sqrt(n,pre));

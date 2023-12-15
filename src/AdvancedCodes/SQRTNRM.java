@@ -3,7 +3,7 @@ package AdvancedCodes;
 public class SQRTNRM {  //newton raphson method
     public static void main(String[] args) {
 
-        System.out.println(sqrtNRM(40));
+        System.out.println(sqrtNRM(36));
 
     }
     static double sqrtNRM(int n){

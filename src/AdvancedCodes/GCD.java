@@ -2,9 +2,9 @@ package AdvancedCodes;
 
 public class GCD {
     public static void main(String[] args) {
-//        int ans=computeGCD(32,4);
-//        System.out.println(ans);
-        System.out.println(lcm(9,108));
+        int ans=computeGCD(32,8);
+        System.out.println(ans);
+//        System.out.println(lcm(9,108));
     }
 
     private static int computeGCD(int a, int b) {
