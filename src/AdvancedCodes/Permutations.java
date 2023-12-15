@@ -13,9 +13,8 @@ public class Permutations {
         }
         char ch=up.charAt(0);
         for(int i=0; i<= p.length(); i++){
-            String fst=p.substring(0,i);
-            String sec=p.substring(i);
-            permute(fst+ch+sec,up.substring(1));
+            String fst=p.substring(0,i)+p.substring(i);
+            permute(fst+ch,up.substring(1));
         }
     }
     static void permuteGFG(String s,String ans){
