@@ -1,3 +1,5 @@
+package CodeBeginners;
+
 import java.util.Scanner;
 
 public class RevNum {

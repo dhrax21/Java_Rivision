@@ -1,3 +1,5 @@
+package CodeBeginners;
+
 public class PrimeNumberCheck {
     public static boolean isPrime(int num){
 

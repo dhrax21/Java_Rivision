@@ -1,3 +1,5 @@
+package CodeBeginners;
+
 import java.util.Arrays;
 
 public class RotArr {
