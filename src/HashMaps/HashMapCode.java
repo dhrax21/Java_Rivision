@@ -31,7 +31,7 @@ public class HashMapCode {
         }
 
         private int hashFunction(K key) {
-            int bi=key.hashCode();
+            int bi=key.hashCode();              //bucket index
             return Math.abs(bi) % N;
         }
 
