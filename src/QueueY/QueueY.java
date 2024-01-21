@@ -111,11 +111,75 @@ public class QueueY {
 
     }
 
+    static class QueueLinkList{
+
+       static class Node{
+           int data;
+           Node next;
+
+           Node (int data){
+               this.data=data;
+               this.next=null;
+           }
+       }
+
+       static Node head=null;
+       static Node tail=null;
+
+
+       public boolean isEmpty(){
+           return head==null && tail==null;
+       }
+
+       public void add(int data){
+           Node nd=new Node(data);
+
+           if(tail==null){
+               head=nd;
+               tail=nd;
+               return;
+           }
+
+           tail.next=nd;
+           tail=nd;
+       }
+
+       public int remove(){
+
+           if(isEmpty()){
+               System.out.println("Queue is empty!");
+               return -1;
+           }
+
+           int v= head.data;
+           if(head==tail){
+               tail=null;
+           }
+           head=head.next;
+           return v;
+       }
+
+       public int peek(){
+           if(isEmpty()){
+               return -1;
+           }
+           return head.data;
+       }
+
+
+    }
+
 
 
     public static void main(String[] args) {
-        Queue q=new Queue(4);
+        QueueLinkList q=new QueueLinkList();
         System.out.println(q.isEmpty());
-        System.out.println(q.peek());
+        q.add(14);
+        q.add(45);
+        q.add(124);
+
+        while(!q.isEmpty()){
+            System.out.println(q.remove());
+        }
     }
 }
