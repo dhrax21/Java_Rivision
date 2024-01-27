@@ -1,5 +1,9 @@
 package BinaryTrees;
 
+import java.util.ArrayDeque;
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class BinaryTree {
 
     static class Node {
@@ -29,6 +33,35 @@ public class BinaryTree {
         }
     }
 
+        private static void levelOrder(Node root){
+            if(root==null){
+                return;
+            }
+            Queue<Node> q=new LinkedList<>();
+            q.add(root);
+            q.add(null);
+
+            while(!q.isEmpty()){
+                Node curr=q.remove();
+
+                if((curr == null)){
+                    System.out.println();
+                    if(q.isEmpty()){
+                        break;
+                    }else{
+                        q.add(null);
+                    }
+                }else{
+                    System.out.print(curr.data+" ");
+                    if(curr.left!=null){
+                        q.add(curr.left);
+                    }
+                    if(curr.right!=null){
+                        q.add(curr.right);
+                    }
+                }
+            }
+        }
 
         private static void postOrder(Node root) {
             if (root == null) {
@@ -66,6 +99,7 @@ public class BinaryTree {
 
             BinaryTreeYT tree = new BinaryTreeYT();
             Node root= tree.buildTree(nodes);
-            preOrder(root);
+            levelOrder(root);
         }
+
 }
