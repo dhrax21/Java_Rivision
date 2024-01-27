@@ -1,6 +1,5 @@
 package BinaryTrees;
 
-import java.util.ArrayDeque;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -93,13 +92,46 @@ public class BinaryTree {
             preOrder(root.right);
         }
 
+        private static int height(Node root){
+            if(root==null){
+                return 0;
+            }
+
+            int leftH=height(root.left);
+            int rightH=height(root.right);
+
+            return Math.max(leftH,rightH)+1;
+        }
+    private static int sum(Node root){
+        if(root==null){
+            return 0;
+        }
+
+        int leftS=sum(root.left);
+        int rightS=sum(root.right);
+
+        return leftS+rightS+ root.data;
+    }
+
+    private static int diameter(Node root){
+        if(root==null){
+            return 0;
+        }
+
+        int diam1=height(root.left) + height(root.right)+1;
+        int diam2=diameter(root.left);
+        int diam3=diameter(root.right);
+
+        return Math.max(diam1,Math.max(diam2,diam3));
+    }
+
 
     public static void main(String[] args) {
-            int[] nodes = {1,3,4,-1,-1,5,-1,-1,99,-1,6,-1,7,-1,-1};
+            int[] nodes = {1,3,4,-1,-1,5,-1,-1,2,-1,6,-1,-1};
 
             BinaryTreeYT tree = new BinaryTreeYT();
             Node root= tree.buildTree(nodes);
-            levelOrder(root);
+            System.out.println(sum(root));
         }
 
 }
