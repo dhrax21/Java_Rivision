@@ -13,7 +13,6 @@ public class Permutations {
         for(int i=0; i<s.length(); i++){
             char ch=s.charAt(i);
             String ros=s.substring(0,i)+s.substring(i+1);
-//            System.out.println("\t"+ros);
             permuteGFG(ros,ans+ch);
         }
     }

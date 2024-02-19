@@ -132,6 +132,6 @@ public class BinaryTree {
             BinaryTreeYT tree = new BinaryTreeYT();
             Node root= tree.buildTree(nodes);
             System.out.println(sum(root));
+            preOrder(root);
         }
-
 }
