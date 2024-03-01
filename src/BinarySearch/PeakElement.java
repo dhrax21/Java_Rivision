@@ -3,9 +3,9 @@ package BinarySearch;
 public class PeakElement {
 
     public static void main(String[] args) {
-        int[] arr={1,2,3,4,3,1,3};
-        PeakElement p=new PeakElement();
-       int ans= p.peakElement(arr,arr.length);
+        int[] arr={12,3,4,5,6,11,10};
+        SecondHighestElement s=new SecondHighestElement();
+        int ans=s.print2largest(arr, arr.length);
         System.out.println(ans);
     }
     public int peakElement(int[] arr,int n)
