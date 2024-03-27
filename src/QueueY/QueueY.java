@@ -153,7 +153,7 @@ public class QueueY {
 
            int v= head.data;
            if(head==tail){
-               tail=null;
+               head=tail=null;
            }
            head=head.next;
            return v;

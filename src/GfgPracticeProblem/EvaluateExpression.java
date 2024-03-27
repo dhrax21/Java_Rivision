@@ -5,8 +5,8 @@ import java.util.Stack;
 public class EvaluateExpression {
 
     public static void main(String[] args) {
-        String str="-+7*45+20";
-        System.out.println(evaluatePreFix(str));
+        String str="231*+9-";
+        System.out.println(evaluatePostFix(str));
     }
 
     public static int evaluatePostFix(String S)

@@ -5,7 +5,7 @@ import java.util.Stack;
 public class InfixToPostfix {
 
     public static void main(String[] args) {
-        System.out.println(infixToPostfix("a+b*(c^d-e)^(f+g*h)-i"));
+        System.out.println(infixToPostfix("(A*B^C+(D+E))-F*G/H"));
     }
         public static String infixToPostfix(String exp) {
 
