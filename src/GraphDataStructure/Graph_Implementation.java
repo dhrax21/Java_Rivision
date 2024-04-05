@@ -25,7 +25,7 @@ public class Graph_Implementation {
         }
     }
 
-  static void createGraph(ArrayList<Edge> graph[]){     //adjacency list , undirected , unweighted graph
+  static void createGraph(ArrayList<Edge>[] graph){     //adjacency list , undirected , unweighted graph
         for(int i=0; i<graph.length; i++){
             graph[i]=new ArrayList<Edge>();
         }
@@ -69,7 +69,7 @@ public class Graph_Implementation {
         while (!queue.isEmpty()){
             int curr= queue.remove();
 
-            if(vis[curr] == false){
+            if(!vis[curr]){
                 System.out.print(curr+"-->");
                 vis[curr]=true;
                 for(int i=0; i<graph[curr].size(); i++){
@@ -89,8 +89,8 @@ public class Graph_Implementation {
 
             for(int i=0; i<graph[src].size(); i++){
                 Edge e=graph[src].get(i);
-                if(vis[e.dest]==false)
-                dfs(graph,e.dest,vis);
+                if(!vis[e.dest])
+                    dfs(graph,e.dest,vis);
             }
         }
     }
@@ -99,7 +99,7 @@ public class Graph_Implementation {
     public static void main(String[] args) {
         int V=7;        //vertices
 
-        ArrayList<Edge> graph[] =new ArrayList[V];
+        ArrayList<Edge>[] graph =new ArrayList[V];
         createGraph(graph);
         boolean[] vis=new boolean[V];
 //
@@ -112,9 +112,12 @@ public class Graph_Implementation {
 //            }
 //        }
 
-        CycleDetection c=new CycleDetection();
-        c.cycleDetectionDFS(graph,0,new boolean[V],new boolean[V]);
-        System.out.println();
+        TopSort t=new TopSort();
+        t.topSort(graph,V);
+
+//        CycleDetection c=new CycleDetection();
+//        c.cycleDetectionDFS(graph,0,new boolean[V],new boolean[V]);
+//        System.out.println();
 //        PrintPaths p=new PrintPaths();
 //        p.printAllPaths(graph,vis,0,"",4);
     }
