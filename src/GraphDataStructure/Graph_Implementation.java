@@ -6,7 +6,6 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class Graph_Implementation {
-
     static class Edge{
         int src;
         int dest;
@@ -31,19 +30,19 @@ public class Graph_Implementation {
         }
         //--------------------graph containing cycle
 
-        graph[0].add(new Edge(0,2));
-        graph[1].add(new Edge(1,0));
-        graph[2].add(new Edge(2,3));
-        graph[3].add(new Edge(3,0));
+//        graph[0].add(new Edge(0,2));
+//        graph[1].add(new Edge(1,0));
+//        graph[2].add(new Edge(2,3));
+//        graph[3].add(new Edge(3,4));
 
        //-----------------------------------------
 
 
 
-//      graph[0].add(new Edge(0,1));
-//
-//      graph[1].add(new Edge(0,2));
-//      graph[1].add(new Edge(1,3));
+      graph[0].add(new Edge(0,1));
+
+      graph[1].add(new Edge(0,2));
+      graph[1].add(new Edge(2,1));
 //
 //      graph[2].add(new Edge(1,2));
 //      graph[2].add(new Edge(2,4));
@@ -81,8 +80,6 @@ public class Graph_Implementation {
     }
 
     static void dfs(ArrayList<Edge>[] graph,int src,boolean[] vis){
-
-
         if(!vis[src]){
             System.out.print(src+" ");
             vis[src]=true;
@@ -112,13 +109,17 @@ public class Graph_Implementation {
 //            }
 //        }
 
-        TopSort t=new TopSort();
-        t.topSort(graph,V);
+//        TopSort t=new TopSort();
+//        t.topSort(graph,V);
 
 //        CycleDetection c=new CycleDetection();
 //        c.cycleDetectionDFS(graph,0,new boolean[V],new boolean[V]);
 //        System.out.println();
 //        PrintPaths p=new PrintPaths();
 //        p.printAllPaths(graph,vis,0,"",4);
+
+         CycleDetectionUndirected c=new CycleDetectionUndirected();
+         boolean ans=c.isCycleUndirected(graph,0,vis,-1);
+        System.out.println(ans);
     }
 }

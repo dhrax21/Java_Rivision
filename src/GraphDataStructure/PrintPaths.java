@@ -12,7 +12,7 @@ public class PrintPaths {
 
         for(int i=0; i<graph[curr].size(); i++){
 
-            Graph_Implementation.Edge e=graph[curr].get(i);
+            Graph_Implementation.Edge e=graph[curr].get(i); //getting the neighbours 
             if(!vis[e.dest]){                       //if node is not visited
                 vis[curr]=true;
                 printAllPaths(graph,vis,e.dest,path+e.dest,tar);
