@@ -82,7 +82,7 @@ public class Graph_Implementation_Weighted {
                    vis[curr.node]=true;
 
                    for(int i = 0; i <graph[curr.node].size(); i++) {
-                        Edge e=graph[curr.node].get(i);
+                        Edge e=graph[curr.node].get(i);     //calculating edges
                         int u=e.src;        //source node
                         int v=e.dest;       //destination node
 
