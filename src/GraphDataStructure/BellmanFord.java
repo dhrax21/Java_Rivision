@@ -55,7 +55,7 @@ public class BellmanFord {
                     int v=e.dest;
 
 
-                    if(dist[u]+e.weight<dist[v]){
+                    if(dist[u] !=Integer.MAX_VALUE && dist[u]+e.weight<dist[v]){
                         dist[v]=dist[u]+e.weight;
                     }
                 }
