@@ -99,7 +99,6 @@ public class BinaryTree {
 
             int leftH=height(root.left);
             int rightH=height(root.right);
-
             return Math.max(leftH,rightH)+1;
         }
     private static int sum(Node root){
