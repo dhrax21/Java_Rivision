@@ -15,6 +15,17 @@ public class FindMissingInSecondArray {
 //            5
 //    Explanation:
 //    Second array does not contain element 5
+
+    public static void main(String[] args) {
+        int n=5,m=5;
+        int[] a={4, 3, 5, 9, 11};
+        int[] b={4, 9, 3, 11, 10};
+        FindMissingInSecondArray f=new FindMissingInSecondArray();
+        f.findMissing(a, b, n, m);
+
+    }
+
+
     ArrayList<Integer> findMissing(int a[], int b[], int n, int m)
     {
         Arrays.sort(b);

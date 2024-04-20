@@ -126,11 +126,18 @@ public class BinaryTree {
 
 
     public static void main(String[] args) {
-            int[] nodes = {1,3,4,-1,-1,5,-1,-1,2,-1,6,-1,-1};
+//            int[] nodes = {1,3,4,-1,-1,5,-1,-1,2,-1,6,-1,-1};
+//
+//            BinaryTreeYT tree = new BinaryTreeYT();
+//            Node root= tree.buildTree(nodes);
+//            System.out.println(sum(root));
+//            preOrder(root);
 
-            BinaryTreeYT tree = new BinaryTreeYT();
-            Node root= tree.buildTree(nodes);
-            System.out.println(sum(root));
-            preOrder(root);
+            AVLTrees tree=new AVLTrees();
+            for (int i=0; i<1000; i++){
+                tree.insert(i+1);
+            }
+
+            System.out.print(tree.height());
         }
 }
