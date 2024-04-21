@@ -31,3 +31,5 @@ public class TopSort {      //topological sort
         }
     }
 }
+
+//int[] arr = ans.stream().mapToInt(i -> i).toArray();  { to change arraylist to array in java8}

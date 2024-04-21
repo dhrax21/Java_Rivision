@@ -38,11 +38,9 @@ public class BinarySearchTree {
 
 
     static Node deleteNode(Node node,int x){
-
         if(node==null){
             return null;
         }
-
         if(node.value<x){
             node.right=deleteNode(node.right,x);
         }else if(x<node.value){
