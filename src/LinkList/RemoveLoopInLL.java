@@ -10,7 +10,7 @@ public class RemoveLoopInLL {
             this.data = data;
         }
     }
-
+//linklist removal of cycle conditions
     public static void removeLoop(Node head){
 
         if(head==null || head.next==null)
