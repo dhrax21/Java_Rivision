@@ -1,12 +1,16 @@
 package BinarySearch;
 
+import java.util.Arrays;
+
 public class PeakElement {
 
     public static void main(String[] args) {
-        int[] arr={12,3,4,5,6,11,10};
-        SecondHighestElement s=new SecondHighestElement();
-        int ans=s.print2largest(arr, arr.length);
-        System.out.println(ans);
+        int[] arr={12,3,4,5,6,-1190,10};
+//        int a= Arrays.stream(arr).min().getAsInt();
+//        System.out.println(a);
+//        SecondHighestElement s=new SecondHighestElement();
+//        int ans=s.print2largest(arr, arr.length);
+//        System.out.println(ans);
     }
     public int peakElement(int[] arr,int n)
     {
