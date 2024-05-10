@@ -4,7 +4,8 @@ public class BinSearch {
     public static void main(String[] args) {
         int[] arr={1,2,3,4,5,6,7,8,9};
 
-        System.out.println(binSearch(arr,9));
+        System.out.println((22-14)%2 != 0);
+//        System.out.println(binSearch(arr,9));
     }
 
     private static int binSearch(int[] arr, int key) {
