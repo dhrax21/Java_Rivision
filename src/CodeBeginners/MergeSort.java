@@ -46,7 +46,7 @@ public class MergeSort {
 
         //copying the sorted array in main given array
         for(int i=0; i< merged.length; i++){
-            arr[si+i]=merged[i];                    //bcos modifying the original array objects
+            arr[si+i]=merged[i];                    //because modifying the original array objects
         }
     }
 }

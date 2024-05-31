@@ -30,27 +30,15 @@ public class Graph_Implementation {
         }
         //--------------------graph containing cycle
 
-//        graph[0].add(new Edge(0,2));
-//        graph[1].add(new Edge(1,0));
-//        graph[2].add(new Edge(2,3));
-//        graph[3].add(new Edge(3,4));
+        graph[0].add(new Edge(0,2));
+        graph[1].add(new Edge(1,0));
+        graph[2].add(new Edge(2,3));
+        graph[3].add(new Edge(3,4));
 
-       //-----------------------------------------
+//       -----------------------------------------
 
 
 
-      graph[0].add(new Edge(0,1));
-
-      graph[1].add(new Edge(0,2));
-      graph[1].add(new Edge(2,1));
-//
-//      graph[2].add(new Edge(1,2));
-//      graph[2].add(new Edge(2,4));
-//
-//      graph[3].add(new Edge(3,5));
-//
-//      graph[4].add(new Edge(4,2));
-//      graph[4].add(new Edge(4,6));
     }
 
    static void printGraph(ArrayList<Edge>[] graph)
@@ -99,24 +87,6 @@ public class Graph_Implementation {
         ArrayList<Edge>[] graph =new ArrayList[V];
         createGraph(graph);
         boolean[] vis=new boolean[V];
-//
-//
-//        //if the graph is not connected them
-//
-//        for(int i=0; i<V; i++){
-//            if(vis[i]==false){
-//                dfs(graph,i,vis);
-//            }
-//        }
-
-//        TopSort t=new TopSort();
-//        t.topSort(graph,V);
-
-//        CycleDetection c=new CycleDetection();
-//        c.cycleDetectionDFS(graph,0,new boolean[V],new boolean[V]);
-//        System.out.println();
-//        PrintPaths p=new PrintPaths();
-//        p.printAllPaths(graph,vis,0,"",4);
 
          CycleDetectionUndirected c=new CycleDetectionUndirected();
          boolean ans=c.isCycleUndirected(graph,0,vis,-1);
