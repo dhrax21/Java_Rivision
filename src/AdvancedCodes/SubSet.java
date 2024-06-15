@@ -2,12 +2,12 @@ package AdvancedCodes;
 
 public class SubSet {
     public static void main(String[] args) {
-        printSubSet("","abc");
+        printSubSet("","123");
     }
 
     private static void printSubSet(String ans, String str) {
         if(str.length()==0){
-            System.out.println(ans);
+            System.out.print(ans+"\t");
             return;
         }
 
