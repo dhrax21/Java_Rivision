@@ -1,5 +1,7 @@
 package DP;
 
+import java.util.Arrays;
+
 public class LCS {
     public static void main(String[] args) {
         String s1="acbde";
@@ -19,7 +21,10 @@ public class LCS {
                 }
             }
         }
-        System.out.println(dp[0][0]);
+//        System.out.println(dp[0][0]);
 
+        for(int[] arr : dp){
+            System.out.println(Arrays.toString(arr));
+        }
     }
 }

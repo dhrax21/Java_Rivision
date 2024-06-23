@@ -5,7 +5,6 @@ public class LongestPallindromicSubstring {
         String s1="abccbde";
         int length=0;
         boolean[][] dp=new boolean[s1.length()][s1.length()];
-        int count=0;
 
         for(int g=0; g<s1.length(); g++){       // g-> gap
             for(int i=0,j=g; j<dp.length; j++,i++){
