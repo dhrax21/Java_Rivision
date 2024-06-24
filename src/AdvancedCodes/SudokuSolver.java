@@ -2,7 +2,30 @@ package AdvancedCodes;
 
 public class SudokuSolver {
 
-    static boolean SolveSudoku(int grid[][])
+    public static void main(String[] args) {
+        int[][] board = new int[][] {
+                { 3, 0, 6, 5, 0, 8, 4, 0, 0 },
+                { 5, 2, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 8, 7, 0, 0, 0, 0, 3, 1 },
+                { 0, 0, 3, 0, 1, 0, 0, 8, 0 },
+                { 9, 0, 0, 8, 6, 3, 0, 0, 5 },
+                { 0, 5, 0, 0, 9, 0, 6, 0, 0 },
+                { 1, 3, 0, 0, 0, 0, 2, 5, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 7, 4 },
+                { 0, 0, 5, 2, 0, 6, 3, 0, 0 }
+        };
+        int N = board.length;
+
+        if (SolveSudoku(board))
+        {
+            // print solution
+            printGrid(board);
+        }
+        else {
+            System.out.println("No solution");
+        }
+    }
+    static boolean SolveSudoku(int[][] grid)
     {
         int n=grid.length;
         int row=-1,col=-1;
@@ -16,11 +39,11 @@ public class SudokuSolver {
                     break;
                 }
             }
-            if(isEmpty==false) break;
+            if(!isEmpty)
+                break;
         }
 
-        if(isEmpty)
-            return true;
+        if(isEmpty) return true;
 
         for(int num=1; num<=9;  num++){
             if(isSafe(grid,row,col,num)){
@@ -59,7 +82,7 @@ public class SudokuSolver {
     }
 
     //Function to print grids of the Sudoku.
-    static void printGrid (int grid[][])
+    static void printGrid (int[][] grid)
     {
         for(int i = 0 ;i<grid.length;i++){
             for(int j = 0 ;j<grid.length;j++){
@@ -69,6 +92,7 @@ public class SudokuSolver {
                     System.out.print(grid[i][j]+" ") ;
                 }
             }
+            System.out.println();
         }
     }
 }
