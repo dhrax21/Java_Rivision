@@ -2,8 +2,8 @@ package AdvancedCodes;
 
 public class StringMatching {
     public static void main(String[] args) {
-        String str="geeksforgeeks";
-        String pat="geekk";
+        String str="ABABDABACDABABCABAB";
+        String pat="ABABCABAB";
 
         boolean flag=false;
 
