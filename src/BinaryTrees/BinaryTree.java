@@ -2,8 +2,19 @@ package BinaryTrees;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
+import BinaryTrees.IterativeTreeTraversal;
 public class BinaryTree {
+    static class Pair {
+        Node node;
+        int state;
+
+        public Pair(Node node, int state) {
+            this.node = node;
+            this.state = state;
+        }
+    }
 
     static class Node {
         int data;
@@ -64,22 +75,23 @@ public class BinaryTree {
 
         private static void postOrder(Node root) {
             if (root == null) {
-                System.out.print(-1 + " ");
+                System.out.print("->");
                 return;
             }
             postOrder(root.left);
             postOrder(root.right);
-            System.out.print(root.data + " ");
+            System.out.print(root.data);
         }
+
 
 
         private static void inOrder(Node root) {
             if (root == null) {
-                System.out.print(-1 + " ");
+                System.out.print("->");
                 return;
             }
             inOrder(root.left);
-            System.out.print(root.data + " ");
+            System.out.print(root.data);
             inOrder(root.right);
         }
         private static void preOrder(Node root) {
@@ -112,6 +124,38 @@ public class BinaryTree {
         return leftS+rightS+ root.data;
     }
 
+    public static void iterative(Node root){
+        Stack<Pair> st=new Stack<>();
+        Pair rtp=new Pair(root,1);
+        st.push(rtp);
+
+        String inOrder="";
+        String preOrder="";
+        String postOrder="";
+
+        while(!st.isEmpty()){
+            Pair top=st.peek();
+            if(top.state==1){
+                preOrder+=top.node.data+"->";
+                top.state++;
+                if(top.node.left!=null){
+                    st.push(new Pair(top.node.left,1));
+                }
+            }else if(top.state==2){
+                inOrder+=top.node.data+"->";
+                top.state++;
+                if(top.node.right!=null){
+                    st.push(new Pair(top.node.right,1));
+                }
+            }else{
+                postOrder+=top.node.data+"->";
+                st.pop();
+            }
+        }
+
+        System.out.println(postOrder);
+    }
+
     private static int diameter(Node root){
         if(root==null){
             return 0;
@@ -126,18 +170,12 @@ public class BinaryTree {
 
 
     public static void main(String[] args) {
-//            int[] nodes = {1,3,4,-1,-1,5,-1,-1,2,-1,6,-1,-1};
-//
-//            BinaryTreeYT tree = new BinaryTreeYT();
-//            Node root= tree.buildTree(nodes);
-//            System.out.println(sum(root));
-//            preOrder(root);
+            int[] nodes = {1,3,4,-1,-1,5,-1,-1,2,-1,6,-1,-1};
 
-            AVLTrees tree=new AVLTrees();
-            for (int i=0; i<1000; i++){
-                tree.insert(i+1);
-            }
-
-            System.out.print(tree.height());
+            BinaryTreeYT tree = new BinaryTreeYT();
+            Node root= tree.buildTree(nodes);
+            postOrder(root);
+            System.out.println();
+            iterative(root);
         }
 }

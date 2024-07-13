@@ -9,8 +9,8 @@ public class AlienDictionary {
 
 
 
-    class GFG {
-        public void main(String[] args) {
+   static class GFG {
+        public static void main(String[] args) {
             Scanner sc = new Scanner(System.in);
 
             int t = Integer.parseInt(sc.next());
@@ -86,7 +86,7 @@ public class AlienDictionary {
     }
 
     // } Driver Code Ends
-    class Solution
+    static class Solution
     {
         public void makeGraph(String[] dict,List<List<Integer>> adj,int K){
 
@@ -111,6 +111,8 @@ public class AlienDictionary {
                     j++;
                 }
             }
+
+           
         }
         public String findOrder(String [] dict, int N, int K)
         {
