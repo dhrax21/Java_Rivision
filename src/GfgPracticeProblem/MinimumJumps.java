@@ -16,9 +16,6 @@ public class MinimumJumps {
         int covered=0;
         int lastJumpIdx=0;
 
-        if(arr.length==1){
-            return 0;
-        }
 
         for(int i=0; i<arr.length; i++){
             covered=Math.max(covered,i+arr[i]);

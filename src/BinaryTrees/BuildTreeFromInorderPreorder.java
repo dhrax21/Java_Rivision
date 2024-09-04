@@ -13,9 +13,10 @@ public class BuildTreeFromInorderPreorder {
     }
 
     static int idx=0;
-    static Node build(int s1,int e1,int[] in,int pre[]){
+    static Node build(int s1,int e1,int[] in,int[] pre){
 
-        if(e1<s1||idx>=in.length)       //base case if start>end and index out of bound for inoder array
+        if(e1<s1||idx>=in.length)
+            //base case if start>end and index out of bound for inorder
             return null;
 
         Node newNode=new Node(pre[idx++]);
