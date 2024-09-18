@@ -10,9 +10,9 @@ public class Graph_Implementation_Weighted {
         int node;
         int dest;
 
-        public Pair(int src, int dest) {
+        public Pair(int src, int dist) {
             this.node = src;
-            this.dest = dest;
+            this.dest = dist;
         }
 
         @Override
@@ -73,6 +73,7 @@ public class Graph_Implementation_Weighted {
                 dist[i]=Integer.MAX_VALUE;
             }
         }
+
            PriorityQueue<Pair> pq=new PriorityQueue<>();
            pq.add(new Pair(src,0));
 
@@ -101,7 +102,7 @@ public class Graph_Implementation_Weighted {
     public static void main(String[] args) {
         int V=6;        //vertices
 
-        ArrayList<Edge> graph[] =new ArrayList[V];
+        ArrayList<Edge>[] graph =new ArrayList[V];
         createGraph(graph);
         dijkstra(graph,0,V);
     }

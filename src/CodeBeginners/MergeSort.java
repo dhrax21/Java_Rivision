@@ -4,10 +4,48 @@ import java.util.Arrays;
 
 public class MergeSort {
     public static void main(String[] args) {
-        int[] arr={5,4,3,2,1,9};
+        int[] arr={5,-4000,3,2,19,109,9};
 
-        mergeSort(arr,0,arr.length);
+//        mergeSort(arr,0,arr.length);
+
+//        System.out.println(Arrays.toString(divideInPlace(arr)));
+        divideInPlace(arr,0, arr.length-1);
         System.out.println(Arrays.toString(arr));
+    }
+
+    static void divideInPlace(int[] arr,int low,int high){
+
+        if(high-low==1) return;
+
+        int mid= (low+high)/2;
+
+        divideInPlace(arr,low,mid);
+        divideInPlace(arr,mid,high);
+
+        mergess(arr,low,mid,high);
+    }
+
+    static void mergess(int[] arr,int left,int mid,int right){
+        int[] res=new int[right-left];
+        int i=left,j=mid,k=0;
+
+        while(i< mid && j<right){
+            if(arr[i]<arr[j]){
+                res[k++]=arr[i++];
+            }else{
+                res[k++]=arr[j++];
+            }
+        }
+        if(i< mid){
+            res[k++]=arr[i++];
+        }
+        if(j<right){
+            res[k++]=arr[j++];
+        }
+
+        for(int z=0; z< res.length; z++){
+            arr[left+z]=res[z];
+        }
     }
 
     private static void mergeSort(int[] arr, int si, int ei) {

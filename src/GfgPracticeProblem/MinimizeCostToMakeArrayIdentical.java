@@ -26,8 +26,8 @@ public class MinimizeCostToMakeArrayIdentical {
             int y = fb.getOrDefault(e, 0);
             int diff = Math.abs(x - y);
 
-            if (diff % 2 != 0) {
-                return -1;
+            if (diff % 2 != 0) {    // diff is odd then return -1
+                    return -1;
             }
 
             for (int i = 0; i < diff / 2; i++) {
