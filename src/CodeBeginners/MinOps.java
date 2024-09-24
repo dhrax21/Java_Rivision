@@ -13,7 +13,6 @@ public class MinOps {
         int[] arr={1,2,3};
         int[] brr={2,1,3};
 
-
         int n=arr.length;
 
         System.out.println(min_operations(n,arr,brr));
