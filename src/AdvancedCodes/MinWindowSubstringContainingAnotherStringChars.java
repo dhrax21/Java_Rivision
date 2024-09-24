@@ -4,6 +4,12 @@ import java.util.Map;
 public class MinWindowSubstringContainingAnotherStringChars {
     // Function to find the smallest window in the string s consisting
     // of all the characters of string p.
+
+    public static void main(String[] args) {
+        String s="geeksforgeeks";
+        String p="sgfe";
+        System.out.println(smallestWindow(s,p));
+    }
     public static String smallestWindow(String s, String p)
     {
         // Edge case when p is larger than s
@@ -43,7 +49,7 @@ public class MinWindowSubstringContainingAnotherStringChars {
                     minStart = left;
                 }
 
-                // Try to contract the window from the left
+                // Try to contract {decrease} the window from the left
                 char leftChar = s.charAt(left);
                 windowFreq.put(leftChar, windowFreq.get(leftChar) - 1);
 
