@@ -1,9 +1,11 @@
 package DP;
 
+import java.util.Arrays;
+
 //Longest Pallindromic Subsequence
 public class LPS {
     public static void main(String[] args) {
-        String s="abkccbc";
+        String s="abba";
 
         int[][] dp=new int[s.length()][s.length()];
         for(int g=0; g<s.length(); g++){
@@ -25,6 +27,10 @@ public class LPS {
                 }
             }
         }
-        System.out.println(dp[0][s.length()-1]);
+        for(int[] a: dp){
+            System.out.println(Arrays.toString(a));
+        }
+        System.out.println(dp);
+//        System.out.println(dp[0][s.length()-1]);
     }
 }

@@ -1,37 +1,40 @@
 package HashMaps;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
+import java.util.*;
 
 public class SubArrays {
     static ArrayList<ArrayList<Integer>> fein=new ArrayList<>();
     public static void main(String[] args) {
-        int[] arr={1,2,4,5};
+        int[] arr={1,2,3};
         ArrayList<Integer> res=new ArrayList<>();
-//        generateSubArray(arr,0,res);
+        HashSet<Integer> set=new HashSet<>();
+        generateSubArray(arr,0,res,set);
+        System.out.println(set.size());
 //        genSubArrayLoop(arr);
 
-         genSubSet(arr,0,res);
-        Collections.sort(fein, new Comparator<ArrayList<Integer>>() {
-            @Override
-            public int compare(ArrayList<Integer> o1, ArrayList<Integer> o2) {
-                return -(o2.size()-o1.size());
-            }
-        });
-        System.out.println(fein.size());
-        System.out.println(fein);
+//         genSubSet(arr,0,res);
+//        Collections.sort(fein, new Comparator<ArrayList<Integer>>() {
+//            @Override
+//            public int compare(ArrayList<Integer> o1, ArrayList<Integer> o2) {
+//                return -(o2.size()-o1.size());
+//            }
+//        });
+//        System.out.println(fein.size());
+//        System.out.println(fein);
 
     }
 
-    private static void generateSubArray(int[] arr, int start, ArrayList<Integer> res) {
+    private static void generateSubArray(int[] arr, int start, ArrayList<Integer> res, HashSet<Integer> set) {
         if(start>=arr.length) return;
 
         for(int i=start; i<arr.length; i++){
             res.add(arr[i]);
-            System.out.println(res);
-            generateSubArray(arr,i+1,res);
+            int ans=0;      // calculating XOR of the subarrays
+                for(int j=0;j<res.size();j++){
+                    ans = ans | res.get(j);
+                }
+            set.add(ans);
+            generateSubArray(arr,i+1,res,set);
             res.remove(res.size()-1);
         }
 
