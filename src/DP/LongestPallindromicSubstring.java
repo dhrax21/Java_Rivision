@@ -1,5 +1,7 @@
 package DP;
 
+import java.util.Arrays;
+
 public class LongestPallindromicSubstring {
     public static void main(String[] args) {
         String s1="abccbde";
