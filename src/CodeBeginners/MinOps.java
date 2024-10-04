@@ -26,7 +26,9 @@ public class MinOps {
         int i=0;
         int ans=0;
         while(i<n){
+//            System.out.println(q);
             int y=q.remove();
+//            System.out.println(y);
             if(y==brr[i]){
                 i++;
             }

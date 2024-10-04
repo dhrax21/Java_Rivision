@@ -4,7 +4,9 @@ public class pattern {
     public static void main (String[] args) {
 
 //        printTri(5,0);
-        diam(5);
+//        diam(5);
+
+        System.out.println(18%12);
     }
 
     static void diam(int n){
