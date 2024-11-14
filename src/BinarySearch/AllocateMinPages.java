@@ -1,4 +1,4 @@
-package GfgPracticeProblem;
+package BinarySearch;
 
 import java.util.Arrays;
 
@@ -15,7 +15,7 @@ public class AllocateMinPages {
         int res=0;
         while(low <= high){
             mid=low+(high-low)/2;
-            if(isPossible(A,N,M,mid)){
+            if(isPossible(A,N,M,mid)){      // check if mid(pages) is able to be divided
                 res=mid;
                 high=mid-1;
             }else{
@@ -25,19 +25,19 @@ public class AllocateMinPages {
         return res;
     }
     static boolean isPossible(int[] A,int N,int M,int maxPages){
-        int count=1;
+        int students=1;
         int sum=0;
         for(int i=0; i<N; i++){
 
             if(A[i]>maxPages) return false;
             sum+=A[i];
             if(sum>maxPages){
-                count++;
-                i--;
-                sum=0;
+                    students++;
+                    i--;
+                    sum=0;
             }
         }
-        if(count>M) return false;
+        if(students>M) return false;
 
         return true;
     }
