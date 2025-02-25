@@ -1,4 +1,4 @@
-package QueueY;
+package Stack_Queue;
 
 public class QueueY {
     static class Queue{

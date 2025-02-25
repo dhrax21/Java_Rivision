@@ -1,4 +1,4 @@
-package QueueY;
+package Stack_Queue;
 
 import java.util.Stack;
 
