@@ -14,7 +14,7 @@ public class PrimeSieve {
             boolean[] isPrime=new boolean[n+1];
             Arrays.fill(isPrime,true);
 
-            isPrime[0]=false;   // as these are not prime numbers
+            isPrime[0]=false;   //as these are not prime numbers
             isPrime[1]=false;
 
             for(int p=2; p*p<=n; p++){
