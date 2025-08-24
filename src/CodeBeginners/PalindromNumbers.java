@@ -24,9 +24,7 @@ public class PalindromNumbers {
 
         for(int i=0; i<str.length(); i++){
             char ch=str.charAt(i);
-
             String ros=str.substring(0,i) + str.substring(i+1);
-
             permute(ros,ch+ans);
         }
     }

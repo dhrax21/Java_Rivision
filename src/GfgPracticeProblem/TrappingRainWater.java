@@ -1,11 +1,16 @@
 package GfgPracticeProblem;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class TrappingRainWater {
 
     public static void main(String[] args) {
-        int[] arr={7,4,0,9};
-        System.out.println(trappingWater(arr,4));
+//        int[] arr = {7, 4, 0, 9};
+//        System.out.println(trappingWater(arr, 4));
+        System.out.println(lengthOfLongestSubstring("abcabcbb"));
     }
+
     static long trappingWater(int arr[], int n) {
         int[] lh = new int[n];        //to store left maximum height
         int[] rh = new int[n];        //to store right maximum height
@@ -35,5 +40,24 @@ public class TrappingRainWater {
 
 
         return ans;
+    }
+
+    public static int lengthOfLongestSubstring(String s) {
+        int len = 0;
+        int maxLen = Integer.MIN_VALUE;
+
+        int left = 0, right = 0;
+        Set<Character> set = new HashSet<>();                                 // abcbababc
+        while (right < s.length()) {
+            if (set.contains(s.charAt(right))) {
+                set.remove(s.charAt(left));
+                left++;
+            } else {
+                set.add(s.charAt(right));
+                right++;
+                maxLen = Math.max(set.size(), maxLen);
+            }
+        }
+        return maxLen;
     }
 }

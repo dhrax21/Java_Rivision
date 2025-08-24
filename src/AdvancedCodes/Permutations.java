@@ -1,5 +1,8 @@
 package AdvancedCodes;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Permutations {
     public static void main(String[] args) {
 //        permute("","xyz");
@@ -46,5 +49,27 @@ public class Permutations {
             String ros=s.substring(0,i)+s.substring(i+1);
             permuteGFG(ros,ans+ch);
         }
+    }
+    static void perumuteNumsArrays(int[] arr,int start, List<List<Integer>> result){
+        if(start==arr.length){
+            List<Integer> curr=new ArrayList<>();
+            for(int num : arr){
+                curr.add(num);
+            }
+            result.add(curr);
+            return;
+        }
+        for(int i=start; i<arr.length; i++){
+            swap(arr,start,i);
+            perumuteNumsArrays(arr,start+1,result);
+            //backtrack undo the swap
+            swap(arr,start,i);
+        }
+
+    }
+    static void swap(int[] arr, int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
     }
 }

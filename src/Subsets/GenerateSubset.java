@@ -3,19 +3,13 @@ package Subsets;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
 public class GenerateSubset {
     public static void main(String[] args) {
 //        int[] arr = {1, 2, 3};
-
-
-
           ArrayList<String> per=new ArrayList<>();
           per=permute("abc","");
           Collections.sort(per);
           System.out.println(per);
-
-
     }
 
 //    private static void permute(String given, String ans) {
