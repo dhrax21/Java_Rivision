@@ -7,9 +7,7 @@ public class BalanceParenthesis {
         public boolean isBalanced(String s) {
             // code here
             Stack<Character> st=new Stack<>();
-
             for(char ch : s.toCharArray()){
-
                 if(ch=='(')
                     st.push(')');
                 else if(ch=='[')
