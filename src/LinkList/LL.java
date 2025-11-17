@@ -116,9 +116,9 @@ public class LL {
 
 
 
-    private class Node{
+    class Node{
         private int val;
-        private Node next;
+        Node next;
 
         public Node(int val) {
             this.val = val;
