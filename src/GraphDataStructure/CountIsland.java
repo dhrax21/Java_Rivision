@@ -1,5 +1,8 @@
 package GraphDataStructure;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class CountIsland {
 
     public static void main(String[] args) {
@@ -44,4 +47,30 @@ public class CountIsland {
         }
         return island;
     }
+
+    private void bfs(char[][] grid, int row,int col,boolean[][] visited){
+        int[] dir={0,1,0,-1,0};
+        int n=grid.length;
+        int m=grid[0].length;
+
+        Queue<int[]> q=new LinkedList<>();
+        q.offer(new int[]{row,col});
+        visited[row][col]=true;
+
+        while(!q.isEmpty()){
+            int[] curr=q.poll();
+            int r=curr[0];
+            int c=curr[1];
+
+            for(int k=0; k<dir.length-1; k++){
+                int nr=r+dir[k];
+                int nc=c+dir[k+1];
+
+                if(nr>=0 && nr<n && nc>=0 && nc<m && grid[nr][nc]=='1' &&
+                        !visited[nr][nc]){
+                    visited[nr][nc]=true;
+                    q.offer(new int[]{nr,nc});
+                }
+            }
+        }
 }
